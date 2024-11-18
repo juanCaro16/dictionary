@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Dictionary</title>
+</head>
+<body>
+    <main id="main">
+        <h1>Traductor Interactivo</h1>
+        <label for="input-word">Buscar Palabra:</label>
+        <input id="input-word" type="text" placeholder="Ingrese una palabra">
+
+        <label for="translation-direction">Direccion:</label>
+        <select id="translation-direction">
+            <option value="en-es">Inglés → Español</option>
+            <option value="es-en">Español → Inglés</option>
+        </select>
+
+        <label for="select">Genero:</label>
+        <select id="select-gender">
+            <option value="all-genders">Todos los generos</option>
+            <option value="animals">Animales</option>
+            <option value="fruits">Frutas</option>
+            <option value="colors">Colores</option>
+            <option value="physical_descriptions">Descripciones Físicas</option>
+            <option value="skills">Habilidades</option>
+            <option value="verbs">Verbos</option>
+        </select>
+        
+    </main>
+
+
+    <script src="./scripts/dictionary.js"></script>
+    <script src="./scripts/app.js"></script>
+</body>
+</html>
