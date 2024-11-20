@@ -12,7 +12,12 @@ main{
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    
+    height: 100vh;
+    width: 100vw;
+}
+
+body{
+    background: linear-gradient(to right,#232222, #0485ac, #3fc1e9);
 }
 
 
@@ -33,11 +38,15 @@ fieldset{
    }
 }
 
+label{
+    font-weight: bolder;
+}
+
 .label-word{
     font-size:0.9rem;
+    
 }
 .input-word{
-    border: dashed 2px #000000c4;
     padding-left: 5px;
 }
 
@@ -51,13 +60,13 @@ fieldset{
     width: 10rem;
     cursor: pointer;
     animation: changeBtn 1s infinite;
-    opacity: 0;
+
 }
 
 @keyframes changeBtn {
     50%{
         background-color: #00ff66;
-        opacity: 1;
+       
     }
 }
 
