@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+
+.title{
+    color: #59d2f7;
+    animation: changeTitle 1s infinite;
+    background-color: transparent;  
+}
+
+fieldset{
+    border-radius: 10px;
+    padding: 10px;
+}
+
+@keyframes changeTitle {
+   50%{
+    color: #000;
+   }
+}
+
+.label-word{
+    font-size:0.9rem;
+}
+.input-word{
+    border: dashed 2px #000000c4;
+    padding-left: 5px;
+}
+
+.btn-form{
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #00ffffa2;
+    font-size: 1rem;
+    height: 2rem;
+    width: 10rem;
+    cursor: pointer;
+    animation: changeBtn 1s infinite;
+    opacity: 0;
+}
+
+@keyframes changeBtn {
+    50%{
+        background-color: #00ff66;
+        opacity: 1;
+    }
+}
+

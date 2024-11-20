@@ -10,27 +10,39 @@
 
     
     <main id="main">
-        <h1>Traductor Interactivo</h1>
-        <label for="input-word">Buscar Palabra:</label>
-        <input id="input-word" type="text" placeholder="Ingrese una palabra">
+        <h1 class="title">Traductor Interactivo</h1>
+        <fieldset>
 
-        <label for="translation-direction">Direccion:</label>
-        <select id="translation-direction">
-            <option value="en-es">Inglés → Español</option>
-            <option value="es-en">Español → Inglés</option>
-        </select>
+            <label class="label-word" for="input-word">Buscar Palabra:</label>
+            <input class="input-word" id="input-word" type="text" placeholder="Ingrese una palabra">
+        </fieldset>
 
-        <label for="select">Genero:</label>
-        <select id="select-gender">
-            <option value="all-genders">Todos los generos</option>
-            <option value="animals">Animales</option>
-            <option value="fruits">Frutas</option>
-            <option value="colors">Colores</option>
-            <option value="physical_descriptions">Descripciones Físicas</option>
-            <option value="skills">Habilidades</option>
-            <option value="verbs">Verbos</option>
-        </select>
-        
+        <fieldset>
+
+            <label for="translation-direction">Direccion:</label>
+            <select id="translation-direction">
+                <option value="en-es">Inglés → Español</option>
+                <option value="es-en">Español → Inglés</option>
+            </select>
+            
+        </fieldset>
+        <fieldset>
+
+            <label class="label-gender" for="select">Genero:</label>
+            <select  id="select-gender">
+                <option value="all-genders">Todos los generos</option>
+                <option value="animals">Animales</option>
+                <option value="fruits">Frutas</option>
+                <option value="colors">Colores</option>
+                <option value="physical_descriptions">Descripciones Físicas</option>
+                <option value="skills">Habilidades</option>
+                <option value="verbs">Verbos</option>
+            </select>
+            
+        </fieldset>
+
+        <button id="btn-form" class="btn-form">Añadir Palabra</button>
+
     </main>
 
 
