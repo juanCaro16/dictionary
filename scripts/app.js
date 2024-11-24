@@ -5,18 +5,19 @@ const btnTranslate = document.getElementById('btn-translate')
 btnTranslate.addEventListener('click', translateWords)
 
 
+
 function translateWords() {
-    
-    /*en esta parte estamos creando la variable que identificará al select del html, de esta manera 
+
+    /*en esta parte estamos creando la variable que identificará al select del html, de esta manera
     podremos manipularlo*/
     const selectOption = document.getElementById('translation-direction')
-    const choice = selectOption.value
+    const translateDirection = selectOption.value
 
     //variable que identifica el elemento con el id correspondiente
     const inputWord = document.getElementById('input-word').value.trim().toLowerCase()
 
 
-    // Verificar si ya existe el contenedor de traducción y reutilizarlo
+    // Verificar si ya existe el contenedor de traducción
     let divTranslate = document.querySelector('.divTranslate')
     if (!divTranslate) {
         //Creamos el nuevo div en el html desde js, el cual se encargará de mostrar la palabra traducida
@@ -29,30 +30,53 @@ function translateWords() {
         const translatedWord = document.createElement('p')
         translatedWord.id = 'translated-word'
         
-        //darle el orden a los elementos
+        // le damos un orden a los elementos creados, en este caso el div contiene al h4 y al p, asimismo, el div 
+        // se encuentra dentro del main 
         main.appendChild(divTranslate)
         divTranslate.appendChild(titleDiv)
         divTranslate.appendChild(translatedWord)
 
         // Insertar el nuevo div antes del botón
-        main.insertBefore(divTranslate, btnTranslate);
+        main.insertBefore(divTranslate, btnTranslate)
     }
     
 
     const translatedWord = document.getElementById('translated-word')
     
+    // Obtener todas las palabras de todas las categorías, el flat hará que todo esté en un solo array
+    const allWords = Object.values(dictionary.categories).flat();
 
-    // le damos un orden a los elementos creados, en este caso el div contiene al h4 y al p, asimismo, el div 
-    // se encuentra dentro del main 
+
+    // Validar si el input está vacío antes de buscar en el diccionario
+    if (!inputWord) {
+        translatedWord.textContent = 'Por favor ingresa una palabra para traducir.'
+        translatedWord.style.color = 'red'
+        return; // Salir de la función si el input está vacío
+    }
+
+    // Si el input no está vacío, restablecer el estilo por si hubo un error previo
+    translatedWord.style.color = ''
+
+    const foundWord = allWords.find(word =>
+        translateDirection === 'en-es'
+        ? word.english.toLowerCase() === inputWord
+        : word.spanish.toLowerCase() === inputWord
+    );
+
+    
+
+    if (foundWord) {
+        translatedWord.textContent = translateDirection === 'en-es'
+        ? inputWord + " = " + foundWord.spanish + "-----> ejemplo: "+foundWord.example
+        : inputWord + " = " + foundWord.english + "-----> example: "+foundWord.example
+    } else {
+        translatedWord.textContent = `La palabra "${inputWord}" no se encontró en el diccionario.`;
+        translatedWord.style.color = 'orange'
+    }
 
     
 
 
-    // Aquí implementarás la lógica para buscar en el dictionary según 'choice' y mostrar el resultado
-    if (inputWord) {
-        translatedWord.textContent = `${inputWord} = [traducción pendiente]`
-    } else {
-        translatedWord.textContent = 'Por favor ingresa una palabra para traducir.'
-        translatedWord.style.color = 'red'
-    }
 } 
+
+
