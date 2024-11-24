@@ -67,8 +67,8 @@ function translateWords() {
 
     if (foundWord) {
         translatedWord.textContent = translateDirection === 'en-es'
-        ? inputWord + " = " + foundWord.spanish + "-----> ejemplo: "+foundWord.example
-        : inputWord + " = " + foundWord.english + "-----> example: "+foundWord.example
+        ? inputWord + " = " + foundWord.spanish + "-----> Ejemplo: "+foundWord.example
+        : inputWord + " = " + foundWord.english + "-----> Example: "+foundWord.example
     } else {
         translatedWord.textContent = `La palabra "${inputWord}" no se encontró en el diccionario.`;
         translatedWord.style.color = 'orange'
