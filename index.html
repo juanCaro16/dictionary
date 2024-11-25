@@ -10,41 +10,51 @@
 
     
     <main id="main">
-        <h1 class="title">Traductor Interactivo</h1>
-
-        <select id="translation-direction">
-            <option value="en-es">Inglés → Español</option>
-            <option value="es-en">Español → Inglés</option>
-        </select>
         
-        
-       
-        <input class="input-word" id="input-word" type="text" placeholder="Ingresa la palabra a traducir">
+        <div id="translate">
+            <h1 class="title">Traductor Interactivo</h1>
 
-          
-        <button id="btn-translate" class="btn-translate">Traducir</button>
-
-
-        <!-- <fieldset>
-
-            <label class="label-gender" for="select">Genero:</label>
-            <select  id="select-gender">
-                <option value="all-genders">Todos los generos</option>
-                <option value="animals">Animales</option>
-                <option value="fruits">Frutas</option>
-                <option value="colors">Colores</option>
-                <option value="physical_descriptions">Descripciones Físicas</option>
-                <option value="skills">Habilidades</option>
-                <option value="verbs">Verbos</option>
-            </select>
             
-        </fieldset> -->
+            <select id="translation-direction">
+                <option value="en-es">Inglés → Español</option>
+                <option value="es-en">Español → Inglés</option>
+            </select>
+
+            <div class="divTraduction">
+                <input class="input-word" id="input-word" type="text" placeholder="Ingresa la palabra a traducir">
+                <button id="btn-translate" class="btn-translate">Traducir</button>
+            </div>
+        
+        </div>
 
         
+        <div id="othersFunctions" class="othersFunctions">
+            <a href="templates/words.html"> Ver diccionario </a>
+            <a href="">Añadir palabra</a>
+        </div>
+
+
     </main>
 
 
     <script type="module" src="./scripts/dictionary.js"></script>
-    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+    
 </body>
 </html>
+
+
+<!-- <fieldset>
+
+    <label class="label-gender" for="select">Genero:</label>
+    <select  id="select-gender">
+        <option value="all-genders">Todos los generos</option>
+        <option value="animals">Animales</option>
+        <option value="fruits">Frutas</option>
+        <option value="colors">Colores</option>
+        <option value="physical_descriptions">Descripciones Físicas</option>
+        <option value="skills">Habilidades</option>
+        <option value="verbs">Verbos</option>
+    </select>
+
+</fieldset> -->

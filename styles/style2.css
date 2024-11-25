@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0.2rem;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+main{
+    display: flex;
+}
+
+.div-principal{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#words-container{
+    display: flex;
+    flex-direction: column;
+  
+}
+
+
+

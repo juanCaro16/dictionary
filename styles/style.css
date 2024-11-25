@@ -18,36 +18,53 @@ body{
 
 main{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    
+
     padding: 1.2rem;
     background-color: white;
-    height: 90vh;
-    width: 35vw;
+    height: 80vh;
+    width: 60vw;
     border-radius: 7px;
 }
 
+/* div principal del main que contiene todos los elementos */
+#translate{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: auto;
+    width: 70%;
+    height: 100%;
+
+    border-right: 2px solid #ddd; /* Línea gris a la derecha */
+    padding-right: 2rem; /* Espacio entre la línea y el contenido */
+}
+
+/* titulo general: Traductor interactivo*/
 .title{
     color: #59d2f7;
     animation: changeTitle 1s infinite;
     background-color: transparent;  
-    margin-bottom: 60px;
+    margin-bottom: 90px;
 }
-
 @keyframes changeTitle {
     50%{
      color: #000;
     }
- }
+}
 
- /* estilos para la parte en donde se seleccionará el idioma a traducir*/
- #translation-direction{
+/* estilos para el select en donde se seleccionará la dirección de la traduccion*/
+#translation-direction{
     border: none;
     width: 40%;
     margin-bottom: 50px;
     font-size: 15px;
+}
+
+/* div que contiene el input y el boton traducir */
+.divTraduction{
+    display: flex;
+    gap: 10px;
 }
 
 /* input para ingresar la palabra a traducir*/
@@ -55,57 +72,12 @@ main{
     border: groove solid;
     border-radius: 5px;
     height: 35px;
-    
+    padding-left: 0.5rem;
     width: 60%;
     margin-bottom: 40px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#select-gender{
- border: none;
-}
-
-
-
-
-
-fieldset{
-    border-radius: 10px;
-    padding: 10px;
-}
-
-
-
-label{
-    font-weight: bolder;
-}
-
-.label-word{
-    font-size:0.9rem;
-    
-}
-.input-word{
-    padding-left: 5px;
-}
-
+/* boton de traducir*/
 .btn-translate{
     padding: 5px;
     border: none;
@@ -118,6 +90,48 @@ label{
     margin-bottom: 20px;
 
 }
+
+/* titulo que se visualiza al presionar el boton traducir */
+.titleTraduction{
+    margin-bottom: 15px;
+}
+
+
+/* segundo div del main, al lado derecho*/
+.othersFunctions{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    width: 40%;
+}
+
+a{
+    text-decoration: none;
+    color: #59d2f7;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
