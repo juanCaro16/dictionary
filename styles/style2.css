@@ -11,24 +11,22 @@ main{
     gap: 10%;
 }
 
-.div-principal{
-    width: 70%;
+.div-main{
+    width: 60%;
     display: flex;
     justify-content: space-between;
-}
-
-#words-container{
-    display: flex;
-    flex-direction: column;
-}
-
-.div-filters{
-    display: flex;
-    flex-direction: column;
-}
-
-.div-filters {
-    color: black;
     font-weight: bold;
 }
+
+
+
+
+#div-filters{
+    width: 40%;
+    font-weight: bold;
+    
+}
+
+
+
 

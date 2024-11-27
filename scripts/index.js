@@ -40,7 +40,6 @@ function translateWords() {
         
         
     }
-    
 
     const translatedWord = document.getElementById('translated-word')
     
@@ -68,10 +67,6 @@ function translateWords() {
         : word.spanish.toLowerCase() === inputWord
     );
 
-    
-    
-
-
     if (foundWord) {
         // este bloque de codigo primero se asegura de que la direccion de traduccion siga siendo la misma
         // luego mostramos la informacion por medio de foundWord que es la variable que guarda el objeto
@@ -84,9 +79,6 @@ function translateWords() {
         translatedWord.innerHTML = `<b>La palabra "${inputWord}" no se encontró en el diccionario.</b>`;
         translatedWord.style.color = 'orange'
     }
-
-    
-
 
 } 
 
