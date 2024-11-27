@@ -1,20 +1,32 @@
 *{
     margin: 0;
-    padding: 0.2rem;
+    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
+body{
+    width: auto;
+    height: 230vh;
+    background: linear-gradient(30deg,#ffffff, #0485ac, #3fc1e9);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 main{
+    padding: 2rem;
     display: flex;
     justify-content: center;
-    gap: 10%;
+    height: 100%;
+    
 }
 
 .div-principal{
     width: 70%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 4%;
+    line-height: 2rem;
 }
 
 #words-container{
