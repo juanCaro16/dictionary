@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const divMain = document.createElement('div')
     divMain.classList.add('div-principal')
-    main.appendChild(divMain)
+    main.appendChild(divMain)   
 
    
     const divWords = document.createElement('div')
@@ -64,6 +64,7 @@ function filterCategories() {
     titleFilter.classList.add('title-filter')
     titleFilter.textContent = 'Filtrar por categoría:'
     divFilters.appendChild(titleFilter)
+
 
     //input de opcion animales
     const divInputAnimals = document.createElement('div')
@@ -171,7 +172,7 @@ function filterCategories() {
             input.addEventListener('change', () => {
                 const selectedCategory = input.value; // Obtiene el valor de la categoría seleccionada
                 const filteredWords = dictionary.categories[selectedCategory]; // Filtra las palabras por categoría
-    
+                
                 // Limpia el contenido actual
                 const divWords = document.getElementById('words-container');
                 const divArrows = document.getElementById('arrows-container');
@@ -212,20 +213,3 @@ function filterCategories() {
 
 
 
-// allWords.forEach(word => {
-
-//     const traductionWord = document.createElement('p')
-//     traductionWord.id = 'traduction-word'
-//     traductionWord.innerHTML = `<b> ${numberAument}. ${word.english} = ${word.spanish} </b>`
-//     divWords.appendChild(traductionWord)
-
-//     const arrow = document.createElement('p')
-//     arrow.innerHTML = `———————————————>`
-//     divArrows.appendChild(arrow)
-    
-//     const examples = document.createElement('p')
-//     examples.innerHTML = `<b> ${numberAument}. Example: </b>  ${word.example}`
-//     exampleWords.appendChild(examples)
-//     numberAument++
-
-// });
