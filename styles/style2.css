@@ -12,7 +12,7 @@ main{
 }
 
 .div-main{
-    width: 60%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -22,7 +22,7 @@ main{
 
 
 #div-filters{
-    width: 40%;
+    width: 30%;
     font-weight: bold;
     
 }
