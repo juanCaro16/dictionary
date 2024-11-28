@@ -16,7 +16,7 @@
 
             
             <select id="translation-direction">
-                <option value="en-es">IngÑÑlés → Español</option>
+                <option value="en-es">Inglés → Español</option>
                 <option value="es-en">Español → Inglés</option>
             </select>
 
@@ -29,16 +29,25 @@
 
         
         <div id="othersFunctions" class="othersFunctions">
-            <a href="templates/words.html"> Ver diccionario </a>
+            <button id="btn-seeDictionary" class="btn-seeDictionary">Ver Diccionario</button>
             <a href="">Añadir palabra</a>
         </div>
 
-
+        
+        
+        
+        
     </main>
+    <section class="sectionMain">
+
+        <button class="btn-closeDictionary" id="btn-closeDictionary">X</button>
+
+    </section>
 
 
     <script type="module" src="./scripts/dictionary.js"></script>
     <script type="module" src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/words.js"></script>
     
 </body>
 </html>

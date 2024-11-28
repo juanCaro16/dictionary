@@ -1,16 +1,46 @@
 import { dictionary } from "./dictionary.js";
 
 
-const main = document.querySelector('main')
+const main = document.querySelector('.sectionMain')
+const btnShow = document.getElementById('btn-seeDictionary')
+const btnHide = document.getElementById('btn-closeDictionary')
+const body = document.querySelector('body')
+
+ const showDictionary = () => {
+
+    btnShow.addEventListener('click',()=>{
+        main.style.display='flex';
+        body.style.height='300vh'
+    })
+
+
+
+
+ };
+
+ const hideDictionary = () => {
+
+    btnHide.addEventListener('click',()=>{
+        main.style.display='none';
+        body.style.height='100vh'
+    })
+
+
+ };
+
 
 //funcion para mostrar las palabras con su respectiva traduccion y ejemplo
 document.addEventListener('DOMContentLoaded', () => {
 
     const divMain = document.createElement('div')
     divMain.classList.add('div-principal')
-    main.appendChild(divMain)   
+    main.appendChild(divMain)
 
-   
+    
+
+    
+
+
     const divWords = document.createElement('div')
     divWords.id = 'words-container'
     divMain.appendChild(divWords)
@@ -41,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const arrow = document.createElement('p')
         arrow.innerHTML = `———————————————>`
         divArrows.appendChild(arrow)
-        
+
         const examples = document.createElement('p')
         examples.innerHTML = `<b> ${numberAument}. Example: </b>  ${word.example}`
         exampleWords.appendChild(examples)
@@ -59,7 +89,7 @@ function filterCategories() {
     const divFilters = document.createElement('div')
     divFilters.classList.add('div-filters')
     main.appendChild(divFilters)
-    
+
     const titleFilter = document.createElement('h4')
     titleFilter.classList.add('title-filter')
     titleFilter.textContent = 'Filtrar por categoría:'
@@ -167,48 +197,49 @@ function filterCategories() {
 
     function handleCategoryFilter() {
         const inputs = document.querySelectorAll('input[name="input-categorie"]'); // Selecciona todos los radios
-    
+
         inputs.forEach(input => {
             input.addEventListener('change', () => {
                 const selectedCategory = input.value; // Obtiene el valor de la categoría seleccionada
                 const filteredWords = dictionary.categories[selectedCategory]; // Filtra las palabras por categoría
-                
+
                 // Limpia el contenido actual
                 const divWords = document.getElementById('words-container');
                 const divArrows = document.getElementById('arrows-container');
                 const exampleWords = document.getElementById('examples');
-    
+
                 divWords.innerHTML = '';
                 divArrows.innerHTML = '';
                 exampleWords.innerHTML = '';
-    
+
                 // Muestra las palabras filtradas
                 if (filteredWords) {
                     let numberAument = 1;
-    
+
                     filteredWords.forEach(word => {
                         const traductionWord = document.createElement('p');
                         traductionWord.id = 'traduction-word';
                         traductionWord.innerHTML = `<b> ${numberAument}. ${word.english} = ${word.spanish} </b>`;
                         divWords.appendChild(traductionWord);
-    
+
                         const arrow = document.createElement('p');
                         arrow.innerHTML = `———————————————>`;
                         divArrows.appendChild(arrow);
-    
+
                         const examples = document.createElement('p');
                         examples.innerHTML = `<b> ${numberAument}. Example: </b>  ${word.example}`;
                         exampleWords.appendChild(examples);
-    
+
                         numberAument++;
                     });
                 }
             });
         });
     }
-    
+
     handleCategoryFilter();
-    
+    showDictionary();
+    hideDictionary();
 }
 
 
