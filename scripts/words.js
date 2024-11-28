@@ -1,7 +1,6 @@
 import { dictionary } from "./dictionary.js";
 
 const main = document.querySelector('main')
-
 const allWords = Object.values(dictionary.categories).flat()
 
 //funcion para crear los elementos que contienen las palabras
@@ -32,6 +31,22 @@ function createElements() {
     titleFilter.innerHTML = '<b> Filtrar por categorías: </b>'
     divFilters.appendChild(titleFilter)
 
+
+    const divInputAlls = document.createElement('div')
+    divFilters.appendChild(divInputAlls)
+
+    const inputAlls = document.createElement('input')
+    inputAlls.type = 'radio'
+    inputAlls.id = 'alls'
+    inputAlls.name = 'category'
+    inputAlls.value = 'alls'
+    divInputAlls.appendChild(inputAlls)      
+
+    const labelInputAlls = document.createElement('label')
+    labelInputAlls.textContent = 'todas'
+    divInputAlls.appendChild(labelInputAlls)
+   
+
     renderOptions()
     filterCategories()
 }
@@ -43,7 +58,6 @@ document.addEventListener('DOMContentLoaded', showWords)
 function showWords() {
     createElements();
  
-    
     let numberAument = 1;
     allWords.forEach(word => {
 
@@ -105,9 +119,12 @@ function filterCategories() {
             // Limpia los contenedores
             clearContainers(divWords, divArrows, exampleWords);
 
+
             // Obtiene la categoría seleccionada
             const selectedCategory = input.id;
-            const filteredWords = dictionary.categories[selectedCategory];
+            const filteredWords = selectedCategory === 'alls'
+            ? allWords
+            : dictionary.categories[selectedCategory];
 
             // Renderiza las palabras filtradas
             renderWords(filteredWords, divWords, divArrows, exampleWords);
@@ -144,7 +161,7 @@ function renderWords(filteredWords, divWords, divArrows, exampleWords) {
         count++;
     });
 }
-                                         
+          
 
 
 
