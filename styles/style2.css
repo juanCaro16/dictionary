@@ -8,11 +8,12 @@
 main{
     display: flex;
     justify-content: center;
-    gap: 10%;
+    flex-direction: row;
+    
 }
 
 .div-main{
-    width: 70%;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     font-weight: bold;
@@ -22,7 +23,7 @@ main{
 
 
 #div-filters{
-    width: 30%;
+    width: 25%;
     font-weight: bold;
     
 }
